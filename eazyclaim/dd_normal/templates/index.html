@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Claim System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- FIS Logo -->
+        <img src="{{ url_for('static', filename='images/fis_logo.svg') }}" alt="FIS Logo" class="logo">
+
+        <!-- Hero Section -->
+        <div class="hero-content">
+            <h1>Welcome to the FIS Eazyclaim for Insurer</h1>
+            <p>Manage double dipping at your finger tips</p>
+            <div class="btn-container">
+                <a href="{{ url_for('submit_claim') }}" class="btn">Make Entry</a>
+                <a href="{{ url_for('claim_list') }}" class="btn btn-outline">View Claims</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

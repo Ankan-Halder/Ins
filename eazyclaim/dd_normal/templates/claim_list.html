@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Submitted Claims</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="text-center text-success">Submitted Claims</h2>
+        <div class="table-responsive mt-4">
+            <table class="table table-hover table-bordered shadow">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Age</th>
+                        <th>Sex</th>
+                        <th>Hospital</th>
+                        <th>PAN</th>
+                        <th>Aadhar</th>
+                        <th>Bill No.</th>
+                        <th>Total Bill</th>
+                        <th>Claimed Amount</th>
+                        <th>Approved Amount</th>
+                        <th>Submission Date</th>
+                        <th>Discharge Date</th>
+                        <th>Claim Hash</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for claim in claims %}
+                    <tr>
+                        <td>{{ claim.patient_name }}</td>
+                        <td>{{ claim.patient_age }}</td>
+                        <td>{{ claim.patient_sex }}</td>
+                        <td>{{ claim.hospital_name }}</td>
+                        <td>{{ claim.pan_card }}</td>
+                        <td>{{ claim.aadhar_card }}</td>
+                        <td>{{ claim.hospital_bill_number }}</td>
+                        <td>₹{{ claim.total_bill_amount }}</td>
+                        <td>₹{{ claim.claimed_amount }}</td>
+                        <td>₹{{ claim.approved_amount }}</td>
+                        <td>{{ claim.date_of_submission }}</td>
+                        <td>{{ claim.date_of_discharge }}</td>
+                        <td class="text-truncate" style="max-width: 150px;">{{ claim.claim_hash }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center mt-3">
+            <a href="{{ url_for('home') }}" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

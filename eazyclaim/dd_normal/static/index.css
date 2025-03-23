@@ -1,0 +1,76 @@
+/* Soft Green Theme for index.html */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background: #B5E48C; /* Soft Banana Leaf Green */
+    color: #2C3E50; /* Dark Greenish-Blue for Contrast */
+}
+
+/* Main Container */
+.container {
+    text-align: center;
+}
+
+/* FIS Logo */
+.logo {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+/* Hero Section */
+.hero-content {
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #1B4332; /* Deep Green for Heading */
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    text-align: center;
+    width: 180px;
+    background: #74C69D; /* Soft Green */
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    background: #40916C; /* Darker Green on Hover */
+}
+
+/* Outline Button */
+.btn-outline {
+    background: transparent;
+    color: #1B4332;
+    border: 2px solid #1B4332;
+}
+
+.btn-outline:hover {
+    background: #1B4332;
+    color: white;
+}

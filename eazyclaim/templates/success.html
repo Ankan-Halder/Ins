@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Issued</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='success.css') }}">
+</head>
+<body>
+    <h1>Congratulations, {{ name }}!</h1>
+    <p>Your EasyClaim Visa Credit Card has been successfully issued:</p>
+    <div class="card-container">
+        <div class="card-logo">EasyClaim Visa</div>
+        <div class="card-number">{{ card_number }}</div>
+        <div class="card-info">
+            <div class="expiry">
+                <strong>Expiry:</strong> {{ expiry_date }}
+            </div>
+            <div class="cvv">
+                <strong>CVV:</strong> {{ cvv }}
+            </div>
+        </div>
+        <div class="visa-logo">VISA</div>
+    </div>
+    <p class="credit-amount">Total Credit Amount: ₹{{ credit_amount }}</p>
+    <p>Thank you for choosing us!</p>
+</body>
+</html>

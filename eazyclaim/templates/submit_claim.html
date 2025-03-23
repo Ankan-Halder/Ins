@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Claim</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='submit_claim.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Submit Claim</h1>
+        
+        <!-- Card Lookup Section -->
+        <form action="/submit_claim" method="post" enctype="multipart/form-data">
+            <label for="card_number">Enter Card Number:</label>
+            <input type="text" id="card_number" name="card_number" required>
+            <button type="submit">Search Card Details</button>
+        </form>
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <!-- Display Card Details -->
+        {% if card %}
+        <div class="card-details">
+            <h2>Card Details:</h2>
+            <p><strong>Name:</strong> {{ card.name }}</p>
+            <p><strong>Card Number:</strong> {{ card.card_number }}</p>
+            <p><strong>Total Insurance Cover:</strong> ₹{{ card.insurance_cover }}</p>
+
+            <h3>Associated Insurance Policies:</h3>
+            <ul>
+                {% for insurance in insurances %}
+                <li>
+                    <p><strong>Policy Name:</strong> {{ insurance.insurance_name }}</p>
+                    <p><strong>Cover Amount:</strong> ₹{{ insurance.cover_amount }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Bill Upload Section -->
+        <form action="/submit_claim" method="post" enctype="multipart/form-data">
+            <label for="file">Upload Bill (PDF/Image):</label>
+            <input type="file" id="file" name="file" accept=".jpg,.png,.pdf" required>
+            <input type="hidden" name="card_id" value="{{ card.id }}">
+            <button type="submit">Extract Data</button>
+        </form>
+        {% endif %}
+
+        <!-- Display Extracted Data -->
+        {% if extracted_data %}
+        <div class="extracted-data">
+            <h2>Extracted Data:</h2>
+            <p><strong>Bill Number:</strong> {{ extracted_data.bill_number }}</p>
+            <p><strong>Bill Amount:</strong> ₹{{ extracted_data.bill_amount }}</p>
+            <p><strong>Hospital Name:</strong> {{ extracted_data.hospital_name }}</p>
+
+            <!-- Claim Submission Section -->
+            <form action="/submit_claim" method="post">
+                <input type="hidden" name="confirm_claim" value="true">
+                <input type="hidden" name="card_id" value="{{ card.id }}">
+                <input type="hidden" name="bill_number" value="{{ extracted_data.bill_number }}">
+                <input type="hidden" name="bill_amount" value="{{ extracted_data.bill_amount }}">
+                <input type="hidden" name="hospital_name" value="{{ extracted_data.hospital_name }}">
+                <button type="submit">Confirm and Submit Claim</button>
+            </form>
+        </div>
+        {% endif %}
+
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

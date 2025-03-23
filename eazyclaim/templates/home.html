@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Home - EasyClaim</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo Section -->
+        <img src="{{ url_for('static', filename='images/fis_logo.svg') }}" alt="EasyClaim Logo" class="logo">
+        
+        <!-- Hero Section -->
+        <div class="hero-content">
+            <h1>Welcome to FIS EasyClaim</h1>
+            <p>Your trusted partner for hassle-free card applications and claims.</p>
+        </div>
+        
+        <!-- Button Section -->
+        <div class="btn-container">
+            <a href="{{ url_for('apply_card') }}" class="btn">Apply for Card</a>
+            <a href="{{ url_for('submit_claim') }}" class="btn btn-outline">Submit Claim</a>
+            <a href="http://127.0.0.1:5001" target="_blank" class="btn btn-secondary">Insurer Dashboard</a>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

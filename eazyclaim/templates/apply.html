@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Health Credit Card</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='apply.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Apply for Health Credit Card</h1>
+        <form method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="Enter 10-digit number" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="aadhar">Aadhar Number:</label>
+            <input type="text" id="aadhar" name="aadhar" pattern="[0-9]{12}" placeholder="Enter 12-digit Aadhar" required>
+
+            <label for="pan">PAN Number:</label>
+            <input type="text" id="pan" name="pan" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" placeholder="Enter PAN (e.g., ABCDE1234F)" required>
+
+            <h2>Insurance Details</h2>
+            <div id="insurance-section">
+                <div class="insurance-policy">
+                    <label for="insurance-name-1">Insurance Name:</label>
+                    <input type="text" id="insurance-name-1" name="insurance_name[]" required>
+
+                    <label for="policy-number-1">Policy Number:</label>
+                    <input type="text" id="policy-number-1" name="policy_number[]" required>
+
+                    <label for="cover-1">Cover Amount:</label>
+                    <input type="number" id="cover-1" name="cover[]" required>
+                </div>
+            </div>
+            <button type="button" class="add-policy-btn" onclick="addPolicy()">Add Another Policy</button>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        let policyCount = 1;
+
+        function addPolicy() {
+            policyCount++;
+            const insuranceSection = document.getElementById('insurance-section');
+
+            const policyDiv = document.createElement('div');
+            policyDiv.classList.add('insurance-policy');
+
+            policyDiv.innerHTML = `
+                <label for="insurance-name-${policyCount}">Insurance Name:</label>
+                <input type="text" id="insurance-name-${policyCount}" name="insurance_name[]" required>
+
+                <label for="policy-number-${policyCount}">Policy Number:</label>
+                <input type="text" id="policy-number-${policyCount}" name="policy_number[]" required>
+
+                <label for="cover-${policyCount}">Cover Amount:</label>
+                <input type="number" id="cover-${policyCount}" name="cover[]" required>
+            `;
+
+            insuranceSection.appendChild(policyDiv);
+        }
+    </script>
+</body>
+</html>

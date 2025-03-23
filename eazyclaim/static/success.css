@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+}
+
+.card-container {
+    display: inline-block;
+    background: linear-gradient(135deg, #4A90E2, #9013FE);
+    width: 350px;
+    height: 200px;
+    border-radius: 15px;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.card-logo {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.card-number {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.card-info div {
+    text-align: left;
+}
+
+.card-info .expiry {
+    font-size: 14px;
+}
+
+.card-info .cvv {
+    font-size: 14px;
+}
+
+.visa-logo {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.credit-amount {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}

@@ -1,0 +1,103 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    text-align: left;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.card-details {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card-details h2 {
+    font-size: 1.5rem;
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+.card-details p {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+button {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+a {
+    display: block;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p.error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
